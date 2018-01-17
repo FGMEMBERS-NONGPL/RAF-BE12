@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Royal Air Factory BE-12:
+
+            source : http://en.wikipedia.org/wiki/RAF_BE-12
+                 
+     Wingspan      : 43 ft 7 3/4 in ( 13.30 m  )
+     Length        : 27 ft 4     in (  8.33 m  )
+     Height        :  9 ft 1 1/2 in (  3.01 m  )
+     Empty weight  : 1390 lb        (   630 kg )
+     Engine        : 1 Hispano-Suiza 8Ca 180 hp
+     Maximum speed : 68 kt       ( 121 km/h )
+     Cruise speed  : 56 kt       (  97 km/h )
+-->
+
+<airplane mass="1570" >
+
+  <approach speed="36" aoa="6">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.18"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture" value="1.0"/> 
+  </approach>
+  
+  <cruise speed="82" alt="7000">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.90" />
+    <control-setting axis="/controls/engines/engine[0]/mixture" value="0.85" /> 
+  </cruise>
+
+  <cockpit x="-0.075" y="0" z="1.125"/>
+
+ <fuselage ax="2.236" ay="0" az=" 0.089" bx="0.964" by="0" bz=" 0.028" width="0.740" taper="0.87" midpoint="1.0"/>
+ <fuselage ax="0.964" ay="0" az=" 0.028" bx="-1.655" by="0" bz="-0.046" width="0.760" taper="0.7" midpoint="0.35"/>
+ <fuselage ax="-1.655" ay="0" az="-0.046" bx="-5.473" by="0" bz="-0.179" width="0.70" taper="0.19" midpoint="0.0" cy="1.59" cz="1.45"/>
+
+    <!-- Wing up -->
+  <wing x="0.270" y="0.0" z="1.445" 
+        chord="1.60" 
+        length="5.65" 
+        taper="1"
+        incidence="2.25"
+        twist="1.5"
+        dihedral="4" 
+        camber="0.115">
+        <stall aoa="11" width="2.5" peak="1.65"/>
+        <flap1 start="0.495" end="1" lift="1.25" drag="1.21"/>
+      
+        <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
+        <control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/>
+      
+        <control-output control="FLAP1" side="left" prop="/surface-positions/left-aileron-pos-norm"/>
+        <control-output control="FLAP1" side="right" prop="/surface-positions/right-aileron-pos-norm"/>
+  </wing>
+
+  <!-- Wing down -->
+  <mstab x="-0.48" y="0.324" z="-0.449" 
+        chord="1.60" 
+        length="5.25" 
+        taper="1" 
+        incidence="2.25"
+        twist="1.5"
+        dihedral="4"
+        camber="0.115">
+        <stall aoa="11" width="2.5" peak="1.65"/>
+        <flap1 start="0.495" end="1" lift="1.25" drag="1.21"/>
+     <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
+        <control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/>
+      
+        <control-output control="FLAP1" side="left" prop="/surface-positions/left-aileron-pos-norm"/>
+        <control-output control="FLAP1" side="right" prop="/surface-positions/right-aileron-pos-norm"/>
+  </mstab>
+
+    <hstab x="-5.0573" y="0.05" z="-0.086" 
+	   chord="1.43" 
+	   length="2.081" 
+         taper="1"
+         incidence="0.75"
+         effectiveness="1.5"
+         camber="-0.01"> 
+         <stall aoa="17" width="4" peak="2.15"/>
+         <flap0 start="0" end="1" lift="1.5" drag="1.22"/>
+         <control-input axis="/controls/flight/elevator" control="FLAP0"/>
+         <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
+         <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
+  </hstab>
+
+ <!-- fin-rudder -->
+
+  <vstab x="-5.274" y="0" z="-0.082" 
+	  chord="1.66" 
+	  length="1.34" 
+        taper="0.34"
+        effectiveness="1.64" 
+	  sweep="30">
+       <stall aoa="20" width="3" peak="1.5"/>
+       <flap0 start="0" end="1" lift="1.36" drag="1.22"/>
+         <control-input axis="/controls/flight/rudder" square="true" control="FLAP0" invert="true"/>
+         <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
+         <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm" min="1" max="-1"/>
+  </vstab>
+
+  <!-- Engines      : Hispano-Suiza 8
+
+       Informations : http://en.wikipedia.org/wiki/Hispano-Suiza_8
+
+       Type         : 8-cylinder liquid-cooled Vee piston engine
+       Power        :   180 hp at 1700 rpm
+       Displacement : 11.76 L  ( 717.8 in3 )
+       Mass        :   445 lb ( 202 kg    )
+  -->
+  <propeller x="1.82" y="0" z="0.149"  
+             radius="1.205"
+             mass="445"       
+             moment="9.0"
+             blades="2"
+             cruise-power="167"
+             cruise-alt="7000" 
+             cruise-speed="82"
+             cruise-rpm="1750"
+             takeoff-power="180"
+             takeoff-rpm="1800">
+             <actionpt x="2.372" y="0" z="0.00"/>
+             <piston-engine eng-rpm="1800"  
+                            eng-power="180"
+                            bore="4.724"
+                            stroke="5.118"
+                            alt="5000" 
+                            compression-ratio="5.1"
+                            min-throttle="0.055"
+                            displacement="717.8"/>
+             <control-input control="THROTTLE" axis="/controls/engines/engine[0]/throttle"/>
+             <control-input control="STARTER" axis="/controls/engines/engine[0]/starter"/>
+             <control-input control="MAGNETOS" axis="/controls/engines/engine[0]/magnetos"/>
+             <control-input control="MIXTURE" axis="/controls/engines/engine[0]/mixture"/>
+  </propeller>
+
+ <!-- Left wheel -->
+  <gear x="0.475" y="0.7384" z="-1.5661" 
+        compression="0.15" 
+        spring="1.08" 
+        damp="0.43"
+        sfric="0.65"
+        dfric="0.71">
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
+  </gear>
+
+  <!-- Right wheel -->
+  <gear x="0.475" y="-0.7384" z="-1.5661"
+        compression="0.15" 
+        spring="1.08"
+        damp="0.43"
+        sfric="0.65"
+        dfric="0.71">        
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
+  </gear>
+
+  <!-- Tail skid -->
+  <gear x="-4.311" y="0" z="-1.023" 
+        compression="0.1" 
+        spring="0.8"
+        sfric="0.95"
+        dfric="0.31">
+        <control-input axis="/controls/flight/rudder" control="STEER" src0="-1.0" src1="1.0" dst0="0.15" dst1="-0.15"/>
+  </gear>
+
+   <!-- wings skids -->
+  <gear x="0.3715" y="4.123" z="-0.77" 
+        skid="1"
+        compression="0.05"
+        spring="3.6"
+        sfric="0.92"
+        dfric="0.93">
+  </gear>
+
+  <gear x="0.38" y="-4.123" z="-0.74" 
+        skid="1"
+        compression="0.05"
+        spring="3.6"
+        sfric="0.92"
+        dfric="0.93">
+  </gear>
+
+
+  <!-- Fuel: Forward 142 lbs -->
+  <tank x="0.473" y="0" z="0.345" capacity="142"/>
+
+  <!-- pilot weight -->
+  <weight x="-0.862" y="0.0" z="0.166" mass-prop="/sim/weight[0]/weight-lb"/>
+
+
+  <ballast x="1.24" y="0" z="-1.90" mass="150"/>
+
+</airplane>
+

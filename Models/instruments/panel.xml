@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+
+    <!-- RPM -->
+  <model>
+    <path>Aircraft/RAF-BE12/Models/instruments/tach/tach.xml</path>
+    <offsets>
+      <x-m>  0.503 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.481 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+ <!-- magneto switch -->
+  <model>
+    <path>Aircraft/RAF-BE12/Models/instruments/magneto/magneto.xml</path>
+    <offsets>
+      <x-m>  0.505 </x-m>
+      <y-m>  -0.20 </y-m>
+      <z-m>  0.325 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+ <!-- throttle lever and quadrant -->
+  <model>
+    <path>Aircraft/RAF-BE12/Models/instruments/throttle/throttle.xml</path>
+    <offsets>
+      <x-m>   0.629 </x-m>
+      <y-m>  -0.283 </y-m>
+      <z-m>  0.155 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+ <!-- Altitude -->
+  <model>
+    <path>Aircraft/RAF-BE12/Models/instruments/alt/alt.xml</path>
+    <offsets>
+      <x-m>   0.505 </x-m>
+      <y-m>  -0.157 </y-m>
+      <z-m>  0.392 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <!-- Compass -->
+  <model>
+    <path>Aircraft/RAF-BE12/Models/instruments/compass/compass.xml</path>
+    <offsets>
+      <x-m>  0.57 </x-m>
+      <y-m>  0.235 </y-m>
+      <z-m>  0.179 </z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+  </model>
+
+  <!-- ASI -->
+  <model>
+    <path>Aircraft/RAF-BE12/Models/instruments//asi/asi.xml</path>
+    <offsets>
+      <x-m>   0.505 </x-m>
+      <y-m>  0.157 </y-m>
+      <z-m>  0.392 </z-m>
+      <roll-deg>      0.000 </roll-deg>
+      <pitch-deg>   0.000 </pitch-deg>
+      <heading-deg>  0.000 </heading-deg>
+    </offsets>
+  </model>
+
+</PropertyList>
